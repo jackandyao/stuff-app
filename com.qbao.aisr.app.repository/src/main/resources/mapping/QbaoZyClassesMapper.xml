@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.qbzy.QbaoZyClassesDao">
+    <resultMap type="QbaoZyClasses" id="QbaoZyClassesMap">
+        <result column="id" property="id"/>
+        <result column="activity_id" property="activityId"/>
+        <result column="sort" property="sort"/>
+        <result column="dir_name" property="dirName"/>
+        <result column="url" property="url"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    
+    <insert id="saveQbaoZyClasses" parameterType="com.qbao.aisr.app.model.QbaoZyClasses">
+        insert into
+        qbaozy_classes (activity_id,sort,dir_name,url)
+        values
+        (#{classes.activityId},#{classes.sort},#{classes.dirName},#{classes.url})
+    </insert>
+    
+    <update id="updateQbaoZyClasses" parameterType="com.qbao.aisr.app.model.QbaoZyClasses">
+		update qbaozy_classes 
+		<set>
+			<if test="classes.activityId != null">activity_id=#{classes.activityId}, </if>
+			<if test="classes.sort != null">sort=#{classes.sort}, </if>
+			<if test="classes.dirName != null">dir_name=#{classes.dirName}, </if>
+			<if test="classes.url != null">url=#{classes.url}, </if>
+			update_time = now()
+		</set>
+	  	where id=#{classes.id}
+	</update>
+</mapper>

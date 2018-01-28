@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.module.StuffModuleDao">
+    <resultMap type="StuffModule" id="StuffModuleMap">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="style_id" property="styleId"/>
+        <result column="status" property="status"/>
+        <result column="display_order" property="displayOrder"/>
+        <result column="more" property="more"/>
+        <result column="title_icon" property="titleIcon"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+</mapper>

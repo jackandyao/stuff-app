@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.message.SysMessageDao">
+    <resultMap type="SysMessage" id="SysMessageMap">
+        <result column="id" property="id"/>
+        <result column="user_id" property="user_id"/>
+        <result column="message_icon" property="message_icon"/>
+        <result column="message_title" property="message_title"/>
+        <result column="message_content" property="message_content"/>
+        <result column="message_url" property="message_url"/>
+        <result column="message_status" property="message_status"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+    </resultMap>
+    
+    
+    <update id="updateSysMessageStatus" parameterType="com.qbao.aisr.app.model.SysMessage">
+		update sys_message 
+		<set>
+			<if test="message_status != null">message_status=#{message_status}</if>
+		</set>
+	  where id = #{id} and user_id = #{user_id} 
+	</update>
+    
+    
+</mapper>

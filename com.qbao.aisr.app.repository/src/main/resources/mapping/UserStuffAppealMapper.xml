@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.user.UserAppealDao">
+    <resultMap type="UserStuffPromotionAppeal" id="userAppealMap">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="order_id" property="orderId"/>
+        <result column="source" property="source"/>
+        <result column="status" property="status"/>
+        <result column="content" property="content"/>
+        <result column="img_url" property="imgUrl"/>
+        <result column="device" property="device"/>
+        <result column="phone_brand" property="phoneBrand"/>
+        <result column="phone_type" property="phoneType"/>
+        <result column="reason" property="reason"/>
+        <result column="rebate_value" property="rebateValue"/>
+    </resultMap>
+</mapper>

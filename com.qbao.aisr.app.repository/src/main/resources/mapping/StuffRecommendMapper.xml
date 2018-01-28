@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.stuffrecommend.StuffRecommendDao">
+    <resultMap type="StuffRecommend" id="StuffRecommendMap">
+        <result column="user_id" property="userId"/>
+        <result column="stuff_ids" property="stuffIds"/>
+        <result column="buy_ids" property="buyIds"/>
+        <result column="view_ids" property="viewIds"/>
+        <result column="like_ids" property="likeIds"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+</mapper>

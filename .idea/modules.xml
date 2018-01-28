@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/com.qbao.aisr.app.common/com.qbao.aisr.app.common.iml" filepath="$PROJECT_DIR$/com.qbao.aisr.app.common/com.qbao.aisr.app.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.qbao.aisr.app.config/com.qbao.aisr.app.config.iml" filepath="$PROJECT_DIR$/com.qbao.aisr.app.config/com.qbao.aisr.app.config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.qbao.aisr.app.model/com.qbao.aisr.app.model.iml" filepath="$PROJECT_DIR$/com.qbao.aisr.app.model/com.qbao.aisr.app.model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.qbao.aisr.app.repository/com.qbao.aisr.app.repository.iml" filepath="$PROJECT_DIR$/com.qbao.aisr.app.repository/com.qbao.aisr.app.repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.qbao.aisr.app.service/com.qbao.aisr.app.service.iml" filepath="$PROJECT_DIR$/com.qbao.aisr.app.service/com.qbao.aisr.app.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.qbao.aisr.app.web/com.qbao.aisr.app.web.iml" filepath="$PROJECT_DIR$/com.qbao.aisr.app.web/com.qbao.aisr.app.web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stuff-app.iml" filepath="$PROJECT_DIR$/stuff-app.iml" />
+    </modules>
+  </component>
+</project>

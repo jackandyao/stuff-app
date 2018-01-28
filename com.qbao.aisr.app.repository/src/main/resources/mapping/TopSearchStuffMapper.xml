@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.top.TopSearchStuffDao">
+    <resultMap type="TopSearchStuff" id="TopSearchStuffMap">
+        <result column="id" property="id"/>
+        <result column="stuff_id" property="stuffId"/>
+        <result column="count" property="count"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <resultMap type="TopSearchStuffComplex" id="TopSearchStuffComplexMap">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="img_url" property="imaUrl"/>
+        <result column="url" property="url"/>
+        <result column="final_price" property="finalPrice"/>
+        <result column="rebate_value" property="rebateValue"/>
+        <result column="source" property="source"/>
+    </resultMap>
+</mapper>

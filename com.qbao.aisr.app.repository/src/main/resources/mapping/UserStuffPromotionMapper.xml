@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.user.UserOrderDao">
+    <resultMap type="UserStuffPromotion" id="userStuffPromotionMap">
+        <result column="id" property="id" />
+        <result column="user_id" property="userId"/>
+        <result column="order_id" property="orderId" />
+        <result column="source" property="source"/>
+        <result column="return_coupon_status" property="returnCouponStatus" />
+        <result column="rebate_value" property="rebateValue" />
+        <result column="order_time" property="orderTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="status" property="status"/>
+        <result column="price" property="price"/>
+        <result column="device" property="device"/>
+        <result column="channel" property="channel"/>
+        <result column="is_pay" property="isPay"/>
+        <result column="is_promotion" property="isPromotion"/>
+        <result column="rebate_type" property="rebateType"/>
+    </resultMap>
+
+    <insert id="saveUserStuffPromo" parameterType="com.qbao.aisr.app.model.UserStuffPromotion">
+        insert into
+        user_stuff_promotion (user_id,order_id,source,order_time,create_time,update_time,status,device,channel,is_pay,is_promotion)
+        value
+        (#{promotion.userId},#{promotion.orderId},#{promotion.source},#{promotion.orderTime},#{promotion.createTime},#{promotion.updateTime},#{promotion.status},#{promotion.device},#{promotion.channel},#{promotion.isPay},#{promotion.isPromotion})
+    </insert>
+    
+    
+    <update id="updateUserStuffPromo" parameterType="com.qbao.aisr.app.model.UserStuffPromotion">
+		update user_stuff_promotion 
+		<set>
+			<if test="promotion.source != null">source=#{promotion.source}, </if>
+			<if test="promotion.orderTime != null">order_time=#{promotion.orderTime}, </if>
+			<if test="promotion.createTime != null">create_time=#{promotion.createTime}, </if>
+			<if test="promotion.updateTime != null">update_time=#{promotion.updateTime}, </if>
+			<if test="promotion.status != null">status=#{promotion.status}, </if>
+			<if test="promotion.device != null">device=#{promotion.device}, </if>
+			<if test="promotion.channel != null">channel=#{promotion.channel}, </if>
+			<if test="promotion.isPay != null">is_pay=#{promotion.isPay}, </if>
+			<if test="promotion.isPromotion != null">is_promotion=#{promotion.isPromotion}, </if>
+		</set>
+	  	where order_Id=#{promotion.orderId} and source=#{promotion.oldSource}
+	</update>
+</mapper>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.cms.ActivityDAO">
+
+	<resultMap type="com.qbao.aisr.app.model.ActivityFloor" id="ActivityFloor">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="imgUrl" column="img_url" />
+		<result property="linkUrl" column="link_url" />
+		<result property="locationId" column="location_id" />
+		<result property="floorId" column="floor_id" />
+	</resultMap>
+	
+	<resultMap type="com.qbao.aisr.app.model.ActivityGoods" id="ActivityGoods">
+		<result property="stuffId" column="stuff_id" />
+		<result property="name" column="name" />
+		<result property="imgUrl" column="img_url" />
+		<result property="url" column="url" />
+		<result property="reservePrice" column="reserve_price" />
+		<result property="finalPrice" column="final_price" />
+		<result property="couponPrice" column="coupon_price" />
+		<result property="couponAmount" column="coupon_amount" />
+		<result property="copyWriter" column="copy_writer" />
+		<result property="orderNum" column="order_num" />
+		<result property="couponLink" column="coupon_link" />
+		<result property="source" column="source" />
+	</resultMap>
+	
+	<sql id="Floor_Column_List" >
+		id,name,img_url,link_url,location_id,floor_id
+	</sql>
+
+	<select id="getCurrentTemplateId" resultType="long">
+		select id   
+		from activity_template
+			where status=1 
+			and start_time &lt;= now() and end_time &gt;= now()
+			limit 1
+	</select>
+	
+	<select id="getFloorItem" resultMap="ActivityFloor">
+		select 
+			<include refid="Floor_Column_List" />
+		from dbas_activity_floor
+			where template_id=#{templateId}
+			and status=1
+			and on_time &lt;= now() and off_time &gt;= now()
+			order by location_id asc
+	</select>
+
+	<select id="getFloorGoods" resultMap="ActivityGoods">
+		select 
+		t1.stuff_id,t2.name,t2.img_url,t2.reserve_price,t2.final_price,t2.source,t3.value coupon_amount,t2.final_price-t3.value coupon_price,t2.copy_writer,t2.order_num,t2.url,t3.link coupon_link
+		from dbas_activity_floor_stuff_conf t1 
+		LEFT JOIN stuff_promotion t2 on t2.id=t1.stuff_id 
+		left JOIN stuff_coupon t3 on t3.stuff_id=t1.stuff_id 
+		where t1.activity_id = #{floorId} 
+		and t3.start_time &lt;= now() and t3.end_time &gt;= now()
+		ORDER BY t1.display_order asc 
+	</select>
+	
+</mapper>

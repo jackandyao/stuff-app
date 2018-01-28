@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.pai.UserStuffPaiDao">
+    <resultMap type="UserStuffPai" id="userStuffPaiMap">
+        <result column="id" property="id"/>
+        <result column="img_url" property="imgUrl"/>
+        <result column="key" property="key"/>
+        <result column="user_id" property="userId"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+</mapper>

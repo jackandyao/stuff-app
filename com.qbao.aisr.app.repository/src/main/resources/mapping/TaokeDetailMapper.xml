@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qbao.aisr.app.repository.mybatis.dao.user.TaokeDetailDao">
+    <resultMap type="TaokeDetail" id="taokeDetailMap">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="stuff_num" property="stuffNum"/>
+        <result column="price" property="price"/>
+        <result column="img_url" property="imgUrl"/>
+        <result column="ios_click_url" property="iosClickUrl"/>
+        <result column="android_click_url" property="androidClickUrl"/>
+        <result column="rebate_value" property="rebateValue"/>
+        <result column="stuff_id" property="stuffId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="rebate_type" property="rebateType"/>
+    </resultMap>
+</mapper>
